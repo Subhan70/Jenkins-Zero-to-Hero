@@ -9,7 +9,7 @@ pipeline {
     stage('Docker Auth and Test') {
       steps {
         script {
-          withDockerRegistry([credentialsId: 'dockerhub-creds', url: 'https://index.docker.io/v1/']) {
+          withDockerRegistry([credentialsId: '65053a4d-21ca-46f8-83d7-255fc0ed81c0', url: 'https://index.docker.io/v1/']) {
             sh 'node --version'
           }
         }
