@@ -1,15 +1,10 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:18-alpine'  // or ubuntu, maven, nginx, etc.
-        }
-    }
+    agent any
 
     stages {
-        stage('Run') {
+        stage('Test Docker') {
             steps {
-                echo 'Running from official Docker Hub image'
-                sh 'node -v'
+                sh 'docker run node:18-alpine node -v'
             }
         }
     }
